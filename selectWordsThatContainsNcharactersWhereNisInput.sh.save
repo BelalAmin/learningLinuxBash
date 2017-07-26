@@ -1,0 +1,11 @@
+#!/bin/bash
+fileNameThatContainsTheWords=~/wordList.txt
+wordsCountInTheFile=$(grep -Ec "^[a-zA-Z]{5}$" $fileNameThatContainsTheWord)
+echo $wordsCountInTheFile
+myWords=$=$(grep -Ec "^[a-zA-Z]{5}$" $fileNameThatContainsTheWord)
+
+randomWord=$(($RANDOM%$wordsCountInTheFile+1))
+echo "index of the word to be printed " $randomWord
+word=$(sed -n "${randomWord}p" $fileNameThatContainsTheWords)
+echo $word
+
